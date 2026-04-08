@@ -1,0 +1,61 @@
+
+<style>
+.tree { font-family: var(--font-mono); font-size: 13px; line-height: 1.9; color: var(--color-text-primary); padding: 1rem 0; }
+.folder { color: var(--color-text-primary); font-weight: 500; }
+.file { color: var(--color-text-secondary); }
+.badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 1px 7px; border-radius: 99px; margin-left: 8px; vertical-align: middle; }
+.b1 { background: #EEEDFE; color: #3C3489; }
+.b2 { background: #E1F5EE; color: #085041; }
+.b3 { background: #FAEEDA; color: #633806; }
+.b4 { background: #FAECE7; color: #712B13; }
+.b5 { background: #F1EFE8; color: #444441; }
+.phase { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 8px 14px; margin: 1rem 0 0.5rem; font-size: 12px; font-weight: 500; color: var(--color-text-secondary); }
+</style>
+
+<h2 class="sr-only">PULSE project folder structure and build phases</h2>
+
+<div class="phase">Project root — pulse/</div>
+<div class="tree">
+<span class="folder">pulse/</span><br>
+&nbsp;&nbsp;<span class="folder">├── backend/</span> <span class="badge b1">Phase 1 — build this first</span><br>
+&nbsp;&nbsp;<span class="folder">│&nbsp;&nbsp; ├── main.py</span> <span class="badge b5">FastAPI entry point</span><br>
+&nbsp;&nbsp;<span class="folder">│&nbsp;&nbsp; ├── config.py</span><br>
+&nbsp;&nbsp;<span class="folder">│&nbsp;&nbsp; ├── ingestion/</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── news_fetcher.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── reddit_fetcher.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── github_fetcher.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── finance_fetcher.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; └── jobs_fetcher.py</span><br>
+&nbsp;&nbsp;<span class="folder">│&nbsp;&nbsp; ├── ml/</span> <span class="badge b2">Phase 2 — ML engine</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── embedder.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── clusterer.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── anomaly.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── forecaster.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; └── signal_scorer.py</span><br>
+&nbsp;&nbsp;<span class="folder">│&nbsp;&nbsp; ├── mcp/</span> <span class="badge b3">Phase 3 — MCP server</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── server.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── tools.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; └── schemas.py</span><br>
+&nbsp;&nbsp;<span class="folder">│&nbsp;&nbsp; ├── llm/</span> <span class="badge b4">Phase 4 — LLM agent</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── groq_client.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── agent.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; └── prompts.py</span><br>
+&nbsp;&nbsp;<span class="folder">│&nbsp;&nbsp; ├── db/</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── models.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── postgres.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; └── vector_store.py</span><br>
+&nbsp;&nbsp;<span class="folder">│&nbsp;&nbsp; ├── api/</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; ├── routes.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; │&nbsp;&nbsp; └── websocket.py</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; └── worker.py</span> <span class="badge b5">Celery background tasks</span><br>
+<br>
+&nbsp;&nbsp;<span class="folder">├── frontend/</span> <span class="badge b5">Phase 5 — dashboard</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; ├── src/App.jsx</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; ├── src/components/SignalHeatmap.jsx</span><br>
+&nbsp;&nbsp;<span class="file">│&nbsp;&nbsp; └── src/components/AlertFeed.jsx</span><br>
+<br>
+&nbsp;&nbsp;<span class="folder">├── docker-compose.yml</span><br>
+&nbsp;&nbsp;<span class="folder">├── requirements.txt</span><br>
+&nbsp;&nbsp;<span class="folder">├── .env</span><br>
+&nbsp;&nbsp;<span class="folder">└── README.md</span>
+</div>
